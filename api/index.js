@@ -9,16 +9,15 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing fields" });
   }
 
-  // Simulated chart data for now
-  res.status(200).json({
+  // Temporary fake data (replace later with real chart logic)
+  return res.status(200).json({
     type: "Manifesting Generator",
     authority: "Sacral",
     strategy: "To Respond",
     profile: "1/3",
-    incarnationCross: "Right Angle Cross of the Sleeping Phoenix",
-    gates: [34, 20, 10, 57],
-    channels: ["34-20", "10-20"],
+    gates: [34, 20, 10],
     definedCenters: ["Sacral", "Throat"],
-    undefinedCenters: ["Solar Plexus", "Heart"]
+    undefinedCenters: ["Heart", "Solar Plexus"],
+    incarnationCross: "Right Angle Cross of the Sleeping Phoenix"
   });
 }
