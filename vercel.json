@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/generate-hdchart.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/generate-hdchart.js"
+    }
+  ]
+}
