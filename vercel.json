@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/generate-hdchart.js": {
-      "runtime": "nodejs"
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
