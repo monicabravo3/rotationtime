@@ -1,19 +1,18 @@
-res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-res.setHeader('Access-Control-Allow-Methods', 'POST');
 export default function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
+    res.status(405).json({ error: 'Method Not Allowed' });
+    return;
   }
 
   const { birthDate, birthTime, birthPlace } = req.body;
 
   if (!birthDate || !birthTime || !birthPlace) {
-    return res.status(400).json({ error: 'Missing required fields' });
+    res.status(400).json({ error: 'Missing fields' });
+    return;
   }
 
-  // Simulate sample chart response — replace with your HD logic
-  res.status(200).json({
+  // Your hardcoded or dynamic HD chart logic here
+  const result = {
     type: "Manifesting Generator",
     authority: "Sacral",
     strategy: "Respond",
@@ -23,5 +22,7 @@ export default function handler(req, res) {
     incarnationCross: "Right Angle Cross of the Sleeping Phoenix",
     gates: [34, 20, 10, 57],
     channels: ["34-20", "10-57"]
-  });
+  };
+
+  res.status(200).json(result);
 }
